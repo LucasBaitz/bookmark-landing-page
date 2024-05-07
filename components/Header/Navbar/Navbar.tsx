@@ -1,3 +1,13 @@
+import ContactInfo from "@/components/ContactInfo/ContactInfo";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -11,7 +21,7 @@ interface VariantStyles {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ variant = "header" }) => {
-  const variants: VariantStyles = { 
+  const variants: VariantStyles = {
     footer: "text-gray-200 text-sm",
     header: "text-gray-600 text-sm",
   };
@@ -30,9 +40,17 @@ const Navbar: React.FC<NavbarProps> = ({ variant = "header" }) => {
           </Link>
         </li>
         <li className="w-full flex justify-center">
-          <Link href="#download" className={variants[variant]}>
-            CONTACT
-          </Link>
+          <Dialog>
+            <DialogTrigger className={variants[variant]}>CONTACT</DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Hey there! 👋</DialogTitle>
+                <DialogDescription>
+                  <ContactInfo />
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </li>
       </ul>
     </nav>
