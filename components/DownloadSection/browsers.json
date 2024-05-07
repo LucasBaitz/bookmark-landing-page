@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Chrome",
+    "minimumVersion": 62
+  },
+  {
+    "name": "Firefox",
+    "minimumVersion": 55
+  },
+  {
+    "name": "Opera",
+    "minimumVersion": 46
+  }
+]
